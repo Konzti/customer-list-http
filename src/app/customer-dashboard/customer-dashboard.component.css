@@ -1,0 +1,39 @@
+.container {
+    margin: 0 auto;
+    padding: 1rem;
+    width: 95vw;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+.customer-row {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  
+}
+/* .selected {
+  color: #fff;
+  background-color: rgb(33,33,33);
+} */
+.test mat-expansion-panel-header.selected{
+  color: #fff;
+  background-color: rgb(140, 41, 41);
+}
+span {
+  margin-right: 1rem;
+}
+
+@media only screen and (max-width: 360px) {
+  span {
+    display: none;
+  }
+  mat-panel-title {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 200px) {
+ 
+  mat-panel-title {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,21 @@
+<div *ngIf="data" class="details" >
+  <mat-panel-title>Address:</mat-panel-title>
+  <mat-panel-title
+    >{{ data.address.number }},
+    {{ data.address.street | titlecase }}</mat-panel-title
+  >
+  <mat-panel-title
+    >{{ data.address.zipcode }},
+    {{ data.address.city | titlecase }}</mat-panel-title
+  >
+  <mat-spinner diameter="40" *ngIf="showSpinner"></mat-spinner>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="{{ !clickedButton ? 'primary' : 'warn' }}"
+      (click)="onClick()"
+    >
+      {{ !clickedButton ? "click me" : "change back" }}
+    </button>
+  </mat-card-actions>
+</div>

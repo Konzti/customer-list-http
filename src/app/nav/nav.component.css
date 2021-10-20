@@ -1,0 +1,9 @@
+mat-toolbar {
+    width: 95vw;
+}
+
+a {
+    color: #888;
+    text-decoration: none;
+    margin-right: 1rem;
+}

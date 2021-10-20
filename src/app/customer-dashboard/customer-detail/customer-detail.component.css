@@ -1,0 +1,12 @@
+mat-panel-title {
+  font-size: 15px;
+  margin-top: 0.5rem;
+}
+button {
+  margin-top: 0.5rem;
+}
+mat-spinner {
+  position: absolute;
+  right: 50%;
+  top: 30%;
+}

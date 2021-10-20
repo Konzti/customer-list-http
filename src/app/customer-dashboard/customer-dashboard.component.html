@@ -1,0 +1,36 @@
+<div class="container" fxLayout="column" fxFlexAlign="center">
+  <h3>{{ title | uppercase }}</h3>
+   <mat-spinner diameter="40" fxFlexAlign="center" *ngIf="showSpinner"></mat-spinner>
+   <!-- <button *ngIf="!customers$.length"(click)="fetchCustomers()">Fetch Users</button> -->
+  <div
+    *ngIf="customers$.length"
+    class="customer"
+    fxLayout="column"
+    fxLayout.xs="column"
+    fxLayoutWrap="no-wrap"
+    fxLayoutGap=".5rem"
+    fxLayoutAlign="space-between"
+  >
+    <div *ngFor="let customer of customers$" [class.test]="customer === test">
+      <mat-expansion-panel (opened)="visible = true" (closed)="visible = false">
+        <mat-expansion-panel-header
+          class="customer-row"
+          [ngClass]="{ selected: change === true }"
+        >
+          <mat-panel-title>
+            {{ customer.name.firstname | titlecase }}
+            {{ customer.name.lastname | titlecase }}
+          </mat-panel-title>
+          <span>
+            {{ visible ? "hide address" : "click to see address" }}
+          </span>
+        </mat-expansion-panel-header>
+        <app-customer-detail
+          (button)="toggleTest($event)"
+          (clicked)="toggleColor($event)"
+          [data]="customer"
+        ></app-customer-detail>
+      </mat-expansion-panel>
+    </div>
+  </div>
+</div>
